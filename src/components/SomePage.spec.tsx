@@ -8,7 +8,7 @@ import { SomePage } from "./SomePage";
 
 describe("<SomePage/>", () => {
 
-  it("can create web action", async () => {
+  it("test 1", async () => {
     render(
       <SomePage/>
     );
@@ -16,5 +16,27 @@ describe("<SomePage/>", () => {
     userEvent.click(button);
     expect(button).not.toBeDisabled();
   });
+
+  it("test 2", async () => {
+    const user = userEvent.setUp();
+    render(
+      <SomePage/>
+    );
+    const button = screen.getByText("Click me");
+    user.click(button);
+    expect(button).not.toBeDisabled();
+  });
+  
+  it("test 3", async () => {
+    const user = userEvent.setUp();
+    render(
+      <SomePage/>
+    );
+    const button = screen.getByText("Click me");
+    user.dblClick(button);
+    expect(button).not.toBeDisabled();
+  });
+
+  
 
 });
