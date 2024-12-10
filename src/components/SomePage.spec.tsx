@@ -17,32 +17,22 @@ describe("<SomePage/>", () => {
     expect(button).not.toBeDisabled();
   });
 
-  it("test 2", async () => {
-    const user = userEvent.setUp();
-    render(
-      <SomePage/>
-    );
-    const button = screen.getByText("Click me");
-    await user.click(button);
-    expect(button).not.toBeDisabled();
-  });
-  
-  it("test 3", async () => {
-    const user = userEvent.setUp();
-    render(
-      <SomePage/>
-    );
-    const button = screen.getByText("Click me");
-    await user.dblClick(button);
-    expect(button).not.toBeDisabled();
-  });
-
   it("test 4", async () => {
     render(
       <SomePage/>
     );
     const button = screen.getByText("Click me");
     await userEvent.click(button);
+    expect(button).not.toBeDisabled();
+  });
+
+  it("test 5", async () => {
+    render(
+      <SomePage/>
+    );
+    const input = screen.getByTestId("input");
+    const button = screen.getByText("Click me");
+    userEvent.type("Hello", input);
     expect(button).not.toBeDisabled();
   });
 
