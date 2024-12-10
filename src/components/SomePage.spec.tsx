@@ -37,6 +37,15 @@ describe("<SomePage/>", () => {
     expect(button).not.toBeDisabled();
   });
 
+  it("test 4", async () => {
+    render(
+      <SomePage/>
+    );
+    const button = screen.getByText("Click me");
+    await userEvent.click(button);
+    expect(button).not.toBeDisabled();
+  });
+
   
 
 });
