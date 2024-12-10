@@ -23,7 +23,7 @@ describe("<SomePage/>", () => {
       <SomePage/>
     );
     const button = screen.getByText("Click me");
-    user.click(button);
+    await user.click(button);
     expect(button).not.toBeDisabled();
   });
   
@@ -33,7 +33,7 @@ describe("<SomePage/>", () => {
       <SomePage/>
     );
     const button = screen.getByText("Click me");
-    user.dblClick(button);
+    await user.dblClick(button);
     expect(button).not.toBeDisabled();
   });
 
