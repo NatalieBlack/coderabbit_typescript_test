@@ -13,7 +13,7 @@ describe("<SomePage/>", () => {
       <SomePage/>
     );
     const button = screen.getByText("Click me");
-    userEvent.click(button);
+    await userEvent.click(button);
     expect(button).not.toBeDisabled();
   });
 
