@@ -36,6 +36,15 @@ describe("<SomePage/>", () => {
     expect(button).not.toBeDisabled();
   });
 
+  it("test name input", async () => {
+    render(
+      <SomePage/>
+    );
+    const input = screen.getByTestId("nameinput");
+    const button = screen.getByText("Click me");
+    userEvent.type("Hello", input);
+    expect(button).not.toBeDisabled();
+  });
   
 
 });
